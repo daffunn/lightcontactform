@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Light Contact Form
  * Description: A light contact form API that gives you just freedom.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Jan Wolf
  * Author URI: https://jan-wolf.de
  * License: MIT
