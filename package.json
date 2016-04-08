@@ -1,0 +1,12 @@
+{
+  "name": "jw-lighttwitterwidget",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-cssnano": "*",
+    "gulp-uglify": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*"
+  }
+}
