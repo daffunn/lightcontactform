@@ -31,6 +31,7 @@ class jw_lightcontactform {
 			'recipients' => $mail[0] . '@' . $mail[1],
 			'via_mail' => 'noreply@' . $mail[1],
 			'styling' => true,
+			'autoload' => true,
 			'autoresponder' => false,
 			'autoresponder_name' => get_option('blogname'),
 			'autoresponder_mail' => 'noreply@' . $mail[1]
@@ -63,14 +64,18 @@ class jw_lightcontactform {
 	}
 
 	public function enqueue_scripts() {
+		$options = $this->get_options();
+
 		wp_enqueue_script( self::prefix('script'), plugins_url( 'dst/script.min.js', __FILE__ ), [ 'jquery' ] );
 		wp_localize_script( self::prefix('script'), self::prefix('ajaxobj'), [
-			'ajaxurl'     => admin_url( 'admin-ajax.php' ),
-			'nonce'       => wp_create_nonce( self::prefix('nonce') )
+			'endpoint_url' => admin_url( 'admin-ajax.php' ),
+			'endpoint_nonce' => wp_create_nonce( self::prefix('nonce') ),
+			'endpoint_action' => self::prefix('api'),
+			'autoload' => $options['autoload'] == true
 		] );
 
 		// Optional styling.
-		if($this->get_options()['styling']) {
+		if($options['styling']) {
 			wp_register_style( self::prefix('style'), plugins_url( 'dst/style.min.css', __FILE__ ) );
 			wp_enqueue_style( self::prefix('style') );
 		}
@@ -156,6 +161,13 @@ class jw_lightcontactform {
 			self::OPTION_SECTION_GENERAL // Section
 		);
 
+		add_settings_field( 'autoload', // ID
+			__('Initialize automatically?', self::TEXT_DOMAIN), // Title
+			[ $this, 'autoload_callback' ], // Callback
+			self::prefix(self::OPTION_GROUP), // Page
+			self::OPTION_SECTION_GENERAL // Section
+		);
+
 		add_settings_field( 'autoresponder', // ID
 			__('Enable Autoresponder', self::TEXT_DOMAIN), // Title
 			[ $this, 'autoresponder_callback' ], // Callback
@@ -234,6 +246,9 @@ class jw_lightcontactform {
 			$data['via_mail'] = $via_mail;
 		}
 
+		// Is the autoload activated?
+		$data[ 'autoload' ] = isset( $input[ 'autoload' ] ) && $input[ 'autoload' ] == '1';
+
 		// Is the styling activated?
 		$data[ 'styling' ] = isset( $input[ 'styling' ] ) && $input[ 'styling' ] == '1';
 
@@ -288,6 +303,11 @@ class jw_lightcontactform {
 	public function styling_callback() {
 		$options = $this->get_options();
 		print '<input type="checkbox" id="styling" name="' . self::prefix(self::OPTION_NAME) . '[styling]" value="1" ' . checked(true, $options['styling'], false) . '>';
+	}
+
+	public function autoload_callback() {
+		$options = $this->get_options();
+		print '<input type="checkbox" id="autoload" name="' . self::prefix(self::OPTION_NAME) . '[autoload]" value="1" ' . checked(true, $options['autoload'], false) . '>';
 	}
 
 	public function autoresponder_callback() {
@@ -371,7 +391,7 @@ class jw_lightcontactform {
 
 		// Echo the wrapper.
 		?>
-		<div class="<?php echo $atts['class'];?>" data-prefix="<?php echo self::PREFIX;?>">
+		<div class="<?php echo $atts['class'];?>">
 			<?php
 			if(empty($content)):
 				?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SinglePage\n"
-"POT-Creation-Date: 2016-04-08 11:44+0100\n"
-"PO-Revision-Date: 2016-04-08 11:44+0100\n"
+"POT-Creation-Date: 2016-04-08 15:20+0100\n"
+"PO-Revision-Date: 2016-04-08 15:20+0100\n"
 "Last-Translator: Jan Wolf <info@jan-wolf.de>\n"
 "Language-Team: Jan Wolf <info@jan-wolf.de>\n"
 "Language: de\n"
@@ -17,67 +17,71 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: src/vendor\n"
 
-#: plugin.php:89
+#: plugin.php:94
 msgid "Light Contact Form Settings"
 msgstr "Kontaktformular-Einstellungen"
 
-#: plugin.php:90
+#: plugin.php:95
 msgid "Light Contact Form"
 msgstr "Kontaktformular"
 
-#: plugin.php:104
+#: plugin.php:109
 msgid "Contact Form Settings"
 msgstr "Kontaktformular-Einstellungen"
 
-#: plugin.php:127
+#: plugin.php:132
 msgid "General Settings"
 msgstr "Allgemeine Einstellungen"
 
-#: plugin.php:133
+#: plugin.php:138
 msgid "Autoresponder Settings"
 msgstr "Autoresponder-Einstellungen"
 
-#: plugin.php:139
+#: plugin.php:144
 msgid "Mails of Recipients (separated by commas)"
 msgstr "Empfängermails"
 
-#: plugin.php:146
+#: plugin.php:151
 msgctxt "Delivery Mail"
 msgid "Delivery Service Mail"
 msgstr "Mailzustellungsservice"
 
-#: plugin.php:153
+#: plugin.php:158
 msgid "Enqueue default styling?"
 msgstr "Standard Styling einbinden?"
 
-#: plugin.php:160
+#: plugin.php:165
+msgid "Initialize automatically?"
+msgstr "Automatische Initialisierung?"
+
+#: plugin.php:172
 msgid "Enable Autoresponder"
 msgstr "Autoresponder aktivieren"
 
-#: plugin.php:167
+#: plugin.php:179
 msgctxt "Autoresponder"
 msgid "Delivery Service Name"
 msgstr "Mailzustellungsservice"
 
-#: plugin.php:174
+#: plugin.php:186
 msgctxt "Autoresponder"
 msgid "Delivery Service Mail"
 msgstr "Mailzustellungsservice"
 
-#: plugin.php:195
+#: plugin.php:207
 msgid "Please enter at least one mail of a recipient."
 msgstr "Bitte geben Sie mindestens eine Empfängermail an."
 
-#: plugin.php:212
+#: plugin.php:224
 #, php-format
 msgid "Recipient mail \"%s\" is invalid."
 msgstr "Empfängermail \"%s\" ist inkorrekt."
 
-#: plugin.php:229
+#: plugin.php:241
 msgid "Please enter a valid mail for the Delivery Service Mail."
 msgstr "Bitte geben Sie eine valide Mail für den Mailzustellungsservice an."
 
-#: plugin.php:251
+#: plugin.php:266
 msgctxt "Autoresponder"
 msgid ""
 "Please enter a valid mail for the Delivery Service Mail (Autoresponder)."
@@ -85,20 +89,20 @@ msgstr ""
 "Bitte geben Sie eine valide Mail für den Mailzustellungsservice "
 "(Autoresponder) an."
 
-#: plugin.php:268
+#: plugin.php:283
 msgid "Define your desired general settings of the widget here."
 msgstr "Definieren Sie die gewünschten Widget-Einstellungen hier."
 
-#: plugin.php:275
+#: plugin.php:290
 msgid "Define your desired autoresponder settings here."
 msgstr "Definieren Sie die gewünschten Autoresponder-Einstellungen hier."
 
-#: plugin.php:350
+#: plugin.php:370
 msgctxt "Delivery service name to recipients"
 msgid "blog_name() - Delivery Service"
 msgstr "blog_name() - Mailzustellungsservice"
 
-#: plugin.php:352
+#: plugin.php:372
 msgctxt ""
 "Subject to the recipients - You can use blog_name(), name(), mail(), "
 "message(), via_mail(), autoresponder_name() and autoresponder_mail() as "
@@ -106,7 +110,7 @@ msgctxt ""
 msgid "blog_name() - New Mail by name()"
 msgstr "blog_name() - Neue Nachricht von name()"
 
-#: plugin.php:352
+#: plugin.php:372
 msgctxt ""
 "Message to the recipients - You can use blog_name(), name(), mail(), "
 "message(), via_mail(), newline(), autoresponder_name() and "
@@ -114,7 +118,7 @@ msgctxt ""
 msgid "name() wrote:newline()newline()message()"
 msgstr "name() schrieb:newline()newline()message()"
 
-#: plugin.php:360
+#: plugin.php:380
 msgctxt ""
 "Subject to the sender (Autoresponder) - You can use blog_name(), name(), "
 "mail(), message(), via_mail(), autoresponder_name() and autoresponder_mail() "
@@ -122,7 +126,7 @@ msgctxt ""
 msgid "blog_name() - Mail sent"
 msgstr "blog_name() - Nachricht versendet"
 
-#: plugin.php:360
+#: plugin.php:380
 msgctxt ""
 "Message to the sender (Autoresponder) - You can use blog_name(), name(), "
 "mail(), message(), via_mail(), newline(), autoresponder_name() and "
@@ -138,19 +142,19 @@ msgstr ""
 "können. Diese Nachricht wurde automatisch erzeugt.newline()newline()Ihre "
 "originale Nachricht:newline()newline()message()"
 
-#: plugin.php:378
+#: plugin.php:398
 msgid "Your Name"
 msgstr "Ihren Namen"
 
-#: plugin.php:379
+#: plugin.php:399
 msgid "Your Mail"
 msgstr "Ihre E-Mail"
 
-#: plugin.php:380
+#: plugin.php:400
 msgid "Your Message"
 msgstr "Ihre Nachricht"
 
-#: plugin.php:381
+#: plugin.php:401
 msgid "Send Message"
 msgstr "Nachricht senden"
 
