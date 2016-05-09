@@ -123,4 +123,4 @@
 	$(document).ready(function() {
 		if(eval('jw_lightcontactform_ajaxobj' ).autoload) $('.jw_lightcontactform_widget').jwLightContactForm();
 	});
-})(jQuery);
+}( jQuery ));
